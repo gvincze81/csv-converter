@@ -2,12 +2,15 @@ package com.codecool.scc;
 
 import com.codecool.scc.factory.OutputFormatterFactory;
 import com.codecool.scc.formatter.OutputFormatter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.File;
 import java.util.List;
 
 public class SimpleCsvConverter {
+    @Autowired
     private FileReader reader;
+    @Autowired
     private OutputFormatterFactory off;
 
     public void convert(File filePath, String outputFormat)

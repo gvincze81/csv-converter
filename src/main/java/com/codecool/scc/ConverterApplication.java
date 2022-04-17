@@ -3,14 +3,16 @@ package com.codecool.scc;
 import java.io.File;
 import java.util.Optional;
 
+import com.codecool.scc.config.AppConfig;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ConverterApplication {
 
     @SuppressWarnings("resource")
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         SimpleCsvConverter converter = context.getBean("converter", SimpleCsvConverter.class);
 
         File path;

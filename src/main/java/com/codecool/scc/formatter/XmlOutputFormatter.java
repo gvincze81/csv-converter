@@ -1,10 +1,10 @@
 package com.codecool.scc.formatter;
 
-import java.io.BufferedReader;
+import java.util.List;
 
 public class XmlOutputFormatter implements OutputFormatter{
     @Override
-    public void printToConsole(BufferedReader br) {
+    public void printToConsole(List<List<String>> records) {
 
     }
 }

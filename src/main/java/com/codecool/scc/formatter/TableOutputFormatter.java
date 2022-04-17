@@ -8,16 +8,8 @@ import java.util.List;
 
 public class TableOutputFormatter implements OutputFormatter{
     @Override
-    public void printToConsole(BufferedReader br) {
-        List<List<String>> records = new ArrayList<>();
+    public void printToConsole(List<List<String>> records) {
 
-        try {
-            String line;
-            while( (line = br.readLine()) != null )
-            {
-                String[] values = line.split(",");
-                records.add(Arrays.asList(values));
-            }
 
             for(List<String> words: records)
             {
@@ -27,9 +19,6 @@ public class TableOutputFormatter implements OutputFormatter{
                 }
                 System.out.println();
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
 
     }
 }

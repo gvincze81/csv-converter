@@ -1,15 +1,19 @@
 package com.codecool.scc;
 
-import java.nio.file.Path;
+import java.io.File;
 
 public class SimpleCsvConverter {
-    public void convert(Path filePath, String outputFormat)
+    FileReader reader = new FileReader();
+
+    public void convert(File filePath, String outputFormat)
     {
         System.out.printf("I convert %s to %s\n", filePath, outputFormat);
+        reader.readData(filePath);
     }
 
-    public void convert(Path filePath)
+    public void convert(File filePath)
     {
         System.out.printf("I convert %s to table\n", filePath);
+        reader.readData(filePath);
     }
 }

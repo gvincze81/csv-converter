@@ -1,12 +1,15 @@
 package com.codecool.scc;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.nio.file.Path;
 import java.util.Optional;
 
 public class ConverterApplication {
-    private static final SimpleCsvConverter converter = new SimpleCsvConverter();
+
     public static void main(String[] args) {
-        Path path;
+        SimpleCsvConverter converter = new SimpleCsvConverter();
+        File path;
         Optional<String> format;
         if(args.length == 0)
         {
@@ -16,12 +19,12 @@ public class ConverterApplication {
 
         if(args.length == 1)
         {
-            path = Path.of(args[0]);
+            path = new File(args[0]);
             converter.convert(path);
             return;
         }
 
-        path = Path.of(args[1]);
+        path = new File(args[1]);
         format = Optional.of(args[0]);
         converter.convert(path, format.get());
 

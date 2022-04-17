@@ -1,8 +1,6 @@
 package com.codecool.scc;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.nio.file.Path;
 import java.util.Optional;
 
 public class ConverterApplication {

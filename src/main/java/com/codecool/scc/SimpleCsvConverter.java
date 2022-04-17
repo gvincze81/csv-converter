@@ -3,13 +3,12 @@ package com.codecool.scc;
 import com.codecool.scc.factory.OutputFormatterFactory;
 import com.codecool.scc.formatter.OutputFormatter;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.util.List;
 
 public class SimpleCsvConverter {
-    FileReader reader = new FileReader();
-    OutputFormatterFactory off = new OutputFormatterFactory();
+    private FileReader reader;
+    private OutputFormatterFactory off;
 
     public void convert(File filePath, String outputFormat)
     {
@@ -27,5 +26,14 @@ public class SimpleCsvConverter {
         if (formatter != null) {
             formatter.printToConsole(records);
         }
+    }
+
+    public void setReader(FileReader reader)
+    {
+        this.reader = reader;
+    }
+
+    public void setOff(OutputFormatterFactory off) {
+        this.off = off;
     }
 }

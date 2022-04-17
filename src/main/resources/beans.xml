@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="converter" class="com.codecool.scc.SimpleCsvConverter">
+        <property name="reader" ref="fileReader"> </property>
+        <property name="off" ref="off"> </property>
+    </bean>
+
+    <bean id="fileReader" class="com.codecool.scc.FileReader">
+    </bean>
+
+    <bean id="off" class="com.codecool.scc.factory.OutputFormatterFactory">
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
+

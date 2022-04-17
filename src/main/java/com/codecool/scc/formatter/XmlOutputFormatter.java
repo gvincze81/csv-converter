@@ -1,8 +1,10 @@
 package com.codecool.scc.formatter;
 
+import java.io.BufferedReader;
+
 public class XmlOutputFormatter implements OutputFormatter{
     @Override
-    public void printToConsole() {
-        System.out.println("Print in xml format");
+    public void printToConsole(BufferedReader br) {
+
     }
 }

@@ -11,7 +11,6 @@ public class FileReader {
         BufferedReader br;
         try {
             br = new BufferedReader(new java.io.FileReader(file));
-            System.out.println("File successfully read.");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
